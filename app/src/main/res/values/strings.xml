@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">TransitionsTestApplication</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Element</string>
+    <string name="fragment_hint">Fragment Hint</string>
+    <string name="item1">item1</string>
+    <string name="item2">item2</string>
+    <string name="item3">item3</string>
+    <string name="item4">item4</string>
+    <string name="hint">hint</string>
+</resources>

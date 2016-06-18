@@ -1,0 +1,70 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              tools:context="com.abs104a.transitionstestapplication.TestFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/item_equal"
+        android:transitionName="@string/item1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_m"
+        android:textColor="@color/light"
+        android:background="@color/dark"
+        android:padding="@dimen/margin_l"
+        android:layout_margin="@dimen/margin_s"
+        android:elevation="@dimen/margin_s"
+        android:text="@string/hello_blank_fragment"/>
+
+    <TextView
+        android:id="@+id/text_hint"
+        android:transitionName="@string/hint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_m"
+        android:textColor="@color/light"
+        android:background="@color/dark_more"
+        android:padding="@dimen/margin_l"
+        android:layout_margin="@dimen/margin_s"
+        android:elevation="@dimen/margin_s"
+        android:text="@string/fragment_hint"/>
+
+    <TextView
+        android:id="@+id/item_average"
+        android:transitionName="@string/item2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_m"
+        android:textColor="@color/light"
+        android:background="@color/dark"
+        android:padding="@dimen/margin_l"
+        android:layout_margin="@dimen/margin_s"
+        android:elevation="@dimen/margin_s"
+        android:text="@string/hello_blank_fragment"/>
+
+    <include
+        layout="@layout/module_detail_tile"
+        android:id="@+id/item_shop_num"
+        android:transitionName="@string/item1"
+        android:layout_margin="@dimen/margin_s"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <TextView
+        android:id="@+id/item_cheap_shop"
+        android:transitionName="@string/item4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_m"
+        android:textColor="@color/light"
+        android:background="@color/dark"
+        android:padding="@dimen/margin_l"
+        android:layout_margin="@dimen/margin_s"
+        android:elevation="@dimen/margin_s"
+        android:text="@string/hello_blank_fragment"/>
+
+</LinearLayout>
