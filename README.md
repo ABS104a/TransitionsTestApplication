@@ -1,1 +1,2 @@
 # TransitionsTestApplication
+AndroidのFragment Transition Animationの動作テスト
