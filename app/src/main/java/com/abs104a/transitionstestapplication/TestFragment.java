@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.transition.Explode;
+import android.transition.Fade;
 import android.transition.TransitionInflater;
 import android.transition.TransitionSet;
 import android.util.Log;
@@ -58,10 +59,22 @@ public class TestFragment extends Fragment {
 
     void initViews(View rootView){
 
-        final View equalView = rootView.findViewById(R.id.item_equal);
-        final View averageView= rootView.findViewById(R.id.item_average);
-        final View shopView= rootView.findViewById(R.id.item_shop_num);
-        final View cheapShopView= rootView.findViewById(R.id.item_cheap_shop);
+        final View equalView = rootView.findViewById(R.id.item_equal) instanceof TextView ?
+                rootView.findViewById(R.id.item_equal) :
+                rootView.findViewById(R.id.item_equal).findViewById(R.id.textView);
+
+        final View averageView= rootView.findViewById(R.id.item_average) instanceof TextView ?
+                rootView.findViewById(R.id.item_average) :
+                rootView.findViewById(R.id.item_average).findViewById(R.id.textView);
+
+        final View shopView = rootView.findViewById(R.id.item_shop_num) instanceof TextView ?
+                rootView.findViewById(R.id.item_shop_num) :
+                rootView.findViewById(R.id.item_shop_num).findViewById(R.id.textView);
+
+        final View cheapShopView= rootView.findViewById(R.id.item_cheap_shop) instanceof TextView ?
+                rootView.findViewById(R.id.item_cheap_shop) :
+                rootView.findViewById(R.id.item_cheap_shop).findViewById(R.id.textView);
+
         final View hintView = rootView.findViewById(R.id.text_hint);
 
         equalView.setTransitionName(equalView.getContext().getString(R.string.item1));
@@ -75,6 +88,9 @@ public class TestFragment extends Fragment {
             final TransitionSet set = new TransitionSet();
             set.addTransition(new Explode());
 
+            final TransitionSet exitSet = new TransitionSet();
+            exitSet.addTransition(new Fade());
+
             final Fragment fragment = new TestFragment();
             //データのセット
             Bundle args = new Bundle();
@@ -82,6 +98,8 @@ public class TestFragment extends Fragment {
             //TODO データを入れる
             fragment.setArguments(args);
             fragment.setEnterTransition(set);
+            fragment.setExitTransition(exitSet);
+            fragment.setReturnTransition(exitSet);
             fragment.setSharedElementEnterTransition(TransitionInflater.from(getActivity()).inflateTransition(R.transition.trans_move));
             final FragmentTransaction ft = getFragmentManager().beginTransaction();
             ft.replace(R.id.container,fragment )

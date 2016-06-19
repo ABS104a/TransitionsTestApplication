@@ -25,7 +25,6 @@
         android:background="@color/dark_more"
         android:padding="@dimen/margin_l"
         android:layout_margin="@dimen/margin_s"
-        android:elevation="@dimen/margin_s"
         android:text="@string/fragment_hint"/>
 
     <TextView
@@ -34,11 +33,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="@dimen/text_m"
-        android:textColor="@color/light"
-        android:background="@color/dark"
+        android:textColor="@color/dark"
         android:padding="@dimen/margin_l"
         android:layout_margin="@dimen/margin_s"
-        android:elevation="@dimen/margin_s"
         android:text="@string/hello_blank_fragment"/>
 
     <TextView
@@ -47,11 +44,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="@dimen/text_m"
-        android:textColor="@color/light"
-        android:background="@color/dark"
+        android:textColor="@color/dark"
         android:padding="@dimen/margin_l"
         android:layout_margin="@dimen/margin_s"
-        android:elevation="@dimen/margin_s"
         android:text="@string/hello_blank_fragment"/>
 
     <TextView
@@ -60,11 +55,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="@dimen/text_m"
-        android:textColor="@color/light"
-        android:background="@color/dark"
+        android:textColor="@color/dark"
         android:padding="@dimen/margin_l"
         android:layout_margin="@dimen/margin_s"
-        android:elevation="@dimen/margin_s"
         android:text="@string/hello_blank_fragment"/>
 
 </LinearLayout>
