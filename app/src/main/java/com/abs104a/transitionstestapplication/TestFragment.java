@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 
 public class TestFragment extends Fragment {
@@ -71,10 +72,10 @@ public class TestFragment extends Fragment {
 
         final View.OnClickListener listener = (view) -> {
             //クリックされた時のリスナ
-            TransitionSet set = new TransitionSet();
+            final TransitionSet set = new TransitionSet();
             set.addTransition(new Explode());
 
-            Fragment fragment = new TestFragment();
+            final Fragment fragment = new TestFragment();
             //データのセット
             Bundle args = new Bundle();
             args.putString(SHARED_VIEW_NAME,view.getTransitionName());
@@ -82,7 +83,7 @@ public class TestFragment extends Fragment {
             fragment.setArguments(args);
             fragment.setEnterTransition(set);
             fragment.setSharedElementEnterTransition(TransitionInflater.from(getActivity()).inflateTransition(R.transition.trans_move));
-            FragmentTransaction ft = getFragmentManager().beginTransaction();
+            final FragmentTransaction ft = getFragmentManager().beginTransaction();
             ft.replace(R.id.container,fragment )
                     .addSharedElement(equalView,        equalView.getTransitionName())
                     .addSharedElement(averageView,      averageView.getTransitionName())
@@ -94,10 +95,11 @@ public class TestFragment extends Fragment {
 
         };
 
-        equalView.setOnClickListener(listener);
-        averageView.setOnClickListener(listener);
-        shopView.setOnClickListener(listener);
-        cheapShopView.setOnClickListener(listener);
+        //リスナのセット
+        if(equalView instanceof TextView)       equalView.setOnClickListener(listener);
+        if(averageView instanceof TextView)     averageView.setOnClickListener(listener);
+        if(shopView instanceof TextView)        shopView.setOnClickListener(listener);
+        if(cheapShopView instanceof TextView)   cheapShopView.setOnClickListener(listener);
 
     }
 
